@@ -1,0 +1,47 @@
+{
+  "name": "task-management-node-express-be",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon",
+    "dev": "nodemon",
+    "make:migration": "sequelize-cli migration:generate --name",
+    "make:seeder": "sequelize-cli seed:generate --name",
+    "migrate": "sequelize-cli db:migrate",
+    "migrate:rollback": "sequelize-cli db:migrate:undo:all",
+    "migrate:fresh": "sequelize-cli db:migrate:undo:all && sequelize-cli db:migrate",
+    "migrate:fresh:seed": "sequelize-cli db:migrate:undo:all && sequelize-cli db:migrate && sequelize-cli db:seed:all",
+    "seed:all": "sequelize-cli db:seed:all",
+    "seed:undo:all": "sequelize-cli db:seed:undo:all"
+  },
+  "_moduleAliases": {
+    "@root": ".",
+    "@src": "src",
+    "@config": "src/config",
+    "@controllers": "src/controllers/api",
+    "@database": "src/database",
+    "@helpers": "src/helpers",
+    "@middlewares": "src/middlewares",
+    "@models": "src/models",
+    "@resources": "src/resources",
+    "@routes": "src/routes/api",
+    "@services": "src/services",
+    "@email-templates": "src/email/templates"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "module-alias": "^2.2.3",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.0.1",
+    "pg": "^8.11.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.35.1",
+    "sequelize-cli": "^6.6.2"
+  }
+}
