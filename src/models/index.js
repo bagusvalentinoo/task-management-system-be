@@ -14,7 +14,7 @@ if (config.use_env_variable) {
   sequelize = new Sequelize(config.database, config.username, config.password, config)
 }
 
-const modelFolders = []
+const modelFolders = ['user', 'other']
 
 modelFolders.forEach(folder => {
   const dirname = __dirname + '/' + folder
