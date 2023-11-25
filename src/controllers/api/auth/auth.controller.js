@@ -19,6 +19,7 @@ const refreshToken = async (req, res) => {
       }
     )
   } catch (error) {
+    console.log(error)
     if (t) await t.rollback()
     return response.failed(res, error.status_code ?? 500, error)
   }
@@ -36,6 +37,7 @@ const logout = async (req, res) => {
       'Logout successfully'
     )
   } catch (error) {
+    console.log(error)
     if (t) await t.rollback()
     return response.failed(res, error.status_code ?? 500, error)
   }

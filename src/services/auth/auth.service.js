@@ -28,14 +28,14 @@ const refreshToken = async (req, t) => {
   if (!userRefreshToken) response.throwNewError(400, 'Oops! Token is not valid')
 
   const userNewRefreshToken = 'Bearer ' + jwt.sign(
-    { user_id: user_id },
+    { id: user_id },
     process.env.JWT_REFRESH_TOKEN_SECRET,
     { expiresIn: process.env.JWT_REFRESH_TOKEN_EXPIRED }
   )
   const userNewRefreshTokenExpired = getDateTimeExpiredToken(userNewRefreshToken)
 
   const userNewAccessToken = 'Bearer ' + jwt.sign(
-    { user_id: user_id },
+    { id: user_id },
     process.env.JWT_ACCESS_TOKEN_SECRET,
     { expiresIn: process.env.JWT_ACCESS_TOKEN_EXPIRED }
   )
