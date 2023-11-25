@@ -4,7 +4,7 @@ const router = express.Router()
 const ApiKey = require('@middlewares/api_key.middleware')
 const LoginController = require('@controllers/auth/login.controller')
 const RegisterController = require('@controllers/auth/register.controller')
-const UserController = require('@controllers/user/user.controller')
+const UserController = require('@controllers/user/user/user.controller')
 const AuthController = require('@controllers/auth/auth.controller')
 
 // Auth Routes
