@@ -18,8 +18,6 @@ const authenticateToken = async (req, res, next) => {
 
     const decoded = jwt.verify(token, process.env.JWT_ACCESS_TOKEN_SECRET)
     req.user_id = decoded.id
-    console.log("Decode Id", decoded.id)
-    console.log("Req User Id", req.user_id)
 
     const isValidToken = await UserToken.findOne({
       where: { user_id: req.user_id, token: tokenHeader }
@@ -29,6 +27,7 @@ const authenticateToken = async (req, res, next) => {
 
     next()
   } catch (error) {
+    console.log(error)
     return response.failed(res, error.status_code ?? 500, error)
   }
 }

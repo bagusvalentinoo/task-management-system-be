@@ -28,6 +28,7 @@ const login = async (req, res) => {
       }
     )
   } catch (error) {
+    console.log(error)
     await t.rollback()
     return response.failed(res, error.status_code ?? 500, error)
   }

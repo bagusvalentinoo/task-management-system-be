@@ -33,8 +33,8 @@ const register = async (req, res) => {
       }
     )
   } catch (error) {
-    if (t) await t.rollback()
     console.log(error)
+    if (t) await t.rollback()
     return response.failed(res, error.status_code ?? 500, error)
   }
 }
